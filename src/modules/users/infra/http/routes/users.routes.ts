@@ -15,5 +15,6 @@ usersRouter.use(ensureAuthenticated);
 // });
 
 usersRouter.post('/', usersController.create);
+usersRouter.get('/', usersController.index);
 
 export default usersRouter;
