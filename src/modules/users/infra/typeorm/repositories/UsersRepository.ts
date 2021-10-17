@@ -46,6 +46,14 @@ class UsersRepository implements IUsersRepository {
 
     return users;
   }
+
+  public async findAllByTeam(team_id: string): Promise<User[]> {
+    const users = await this.ormRepository.find({
+      where: { team_id },
+    });
+
+    return users;
+  }
 }
 
 export default UsersRepository;

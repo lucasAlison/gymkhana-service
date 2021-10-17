@@ -19,6 +19,12 @@ class UsersRepository implements IUsersRepository {
     return findUser;
   }
 
+  public async findAllByTeam(team_id: string): Promise<User[]> {
+    const findUser = this.users.filter(user => user.team_id === team_id);
+
+    return findUser;
+  }
+
   public async create({
     name,
     username,
@@ -32,6 +38,10 @@ class UsersRepository implements IUsersRepository {
     this.users.push(user);
 
     return user;
+  }
+
+  public async findAll() {
+    return this.users;
   }
 }
 

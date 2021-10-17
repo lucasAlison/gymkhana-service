@@ -2,15 +2,19 @@ import { injectable, inject } from 'tsyringe';
 
 import IUsersRepository from '../repositories/IUsersRepository';
 
+interface IRequest {
+  team_id: string;
+}
+
 @injectable()
-class IndexUserService {
+class ListUserTeamService {
   constructor(
     @inject('UsersRepository')
     private usersRepository: IUsersRepository
   ) {}
 
-  public async execute(): Promise<Object[]> {
-    const users = await this.usersRepository.findAll();
+  public async execute({ team_id }: IRequest): Promise<Object[]> {
+    const users = await this.usersRepository.findAllByTeam( team_id );
 
     const usersResponse = users.map(user => {
       return {
@@ -29,4 +33,4 @@ class IndexUserService {
   }
 }
 
-export default IndexUserService;
+export default ListUserTeamService;
