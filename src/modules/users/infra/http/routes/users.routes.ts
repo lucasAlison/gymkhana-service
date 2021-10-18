@@ -17,6 +17,7 @@ usersRouter.get('/', usersController.show);
 usersRouter.get('/list', usersController.index);
 usersRouter.get('/team/:team_id', userTeamController.index);
 usersRouter.post('/:id/team', linkedUserTeamController.create);
+usersRouter.delete('/:id/team', linkedUserTeamController.remove);
 usersRouter.put('/', usersController.update);
 usersRouter.delete('/:user_id', usersController.remove);
 

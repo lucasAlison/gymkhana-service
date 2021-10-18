@@ -27,7 +27,7 @@ class User {
   password: string;
 
   @Column()
-  team_id: string;
+  team_id: string | null;
 
   @ManyToOne(() => Team)
   @JoinColumn({ name: 'team_id' })
