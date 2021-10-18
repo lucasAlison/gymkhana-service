@@ -25,6 +25,12 @@ class UsersRepository implements IUsersRepository {
     return findUser;
   }
 
+  public async findById(id: string): Promise<User | undefined> {
+    const findUser = this.users.find(user => user.id === id);
+
+    return findUser;
+  }
+
   public async create({
     name,
     username,
@@ -43,6 +49,23 @@ class UsersRepository implements IUsersRepository {
   public async findAll() {
     return this.users;
   }
+
+  public async save(user: User): Promise<User> {
+    const findIndex = this.users.findIndex(findUser => findUser.id === user.id);
+
+    this.users[findIndex] = user;
+
+    return user;
+  }
+
+  public async remove(user: User): Promise<User> {
+    const findIndex = this.users.findIndex(findUser => findUser.id === user.id);
+
+    this.users.slice(findIndex, 1);
+
+    return user;
+  }
+
 }
 
 export default UsersRepository;

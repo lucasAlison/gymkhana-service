@@ -4,7 +4,7 @@ import { container } from 'tsyringe';
 
 import ListUserTeamService from '@modules/users/services/ListUserTeamService';
 
-export default class UsersTeamController {
+export default class UserTeamController {
 
   public async index(request: Request, response: Response): Promise<Response> {
     const { team_id } = request.params;

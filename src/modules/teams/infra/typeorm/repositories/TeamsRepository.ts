@@ -34,6 +34,12 @@ class TeamsRepository implements ITeamsRepository {
 
     return teams;
   }
+
+  public async findById(id: string): Promise<Team | undefined> {
+    const findTeam = await this.ormRepository.findOne(id);
+
+    return findTeam;
+  }
 }
 
 export default TeamsRepository;
