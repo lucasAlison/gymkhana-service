@@ -40,6 +40,14 @@ class TeamsRepository implements ITeamsRepository {
 
     return findTeam;
   }
+
+  public async save(team: Team): Promise<Team> {
+    return this.ormRepository.save(team);
+  }
+
+  public async remove(team: Team): Promise<Team> {
+    return this.ormRepository.remove(team);
+  }
 }
 
 export default TeamsRepository;

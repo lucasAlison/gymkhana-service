@@ -86,7 +86,7 @@ export default class UsersController {
 
     const removeUser = container.resolve(RemoveUserService);
 
-    const user = await removeUser.execute({
+    await removeUser.execute({
       user_id,
     });
 

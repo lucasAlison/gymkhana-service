@@ -6,4 +6,6 @@ export default interface ITeamsRepository {
   findByName(name: string): Promise<Team | undefined>;
   findAll(): Promise<Team[]>;
   findById(id: string): Promise<Team | undefined>;
+  save(team: Team): Promise<Team>;
+  remove(team: Team): Promise<Team>;
 }
