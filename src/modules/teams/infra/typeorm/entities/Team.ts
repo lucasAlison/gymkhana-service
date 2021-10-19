@@ -1,9 +1,12 @@
+import Gymkhana from '@modules/gymkhanas/infra/typeorm/entities/Gymkhana';
 import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  ManyToOne,
+  JoinColumn,
 } from 'typeorm';
 
 @Entity('teams')
@@ -13,6 +16,13 @@ class Team {
 
   @Column()
   name: string;
+
+  @Column()
+  gymkhana_id: string | null;
+
+  @ManyToOne(() => Gymkhana)
+  @JoinColumn({ name: 'gymkhana_id' })
+  gymkhana: Gymkhana;
 
   @CreateDateColumn()
   created_at: Date;
