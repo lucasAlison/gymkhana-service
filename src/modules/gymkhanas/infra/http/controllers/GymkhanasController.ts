@@ -49,9 +49,6 @@ export default class GymkhanasController {
 
   public async show(request: Request, response: Response): Promise<Response> {
     const { gymkhana_id }  = request.params;
-    console.log('------------------');
-    console.log(gymkhana_id);
-    console.log('------------------');
     const showGymkhana = container.resolve(ShowGymkhanaService);
 
     const gymkhana = await showGymkhana.execute({

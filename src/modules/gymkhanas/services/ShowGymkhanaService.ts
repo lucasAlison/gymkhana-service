@@ -15,7 +15,6 @@ class ShowGymkhanaService {
   ) {}
 
   public async execute({ gymkhana_id }: IRequest): Promise<Gymkhana> {
-    console.log(gymkhana_id);
     const gymkhana = await this.gymkhanasRepository.findById(gymkhana_id);
 
     if (!gymkhana) {
