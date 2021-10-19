@@ -48,6 +48,14 @@ class TeamsRepository implements ITeamsRepository {
   public async remove(team: Team): Promise<Team> {
     return this.ormRepository.remove(team);
   }
+
+  public async findAllByGymkhana(gymkhana_id: string): Promise<Team[]> {
+    const teams = await this.ormRepository.find({
+      where: { gymkhana_id },
+    });
+
+    return teams;
+  }
 }
 
 export default TeamsRepository;
