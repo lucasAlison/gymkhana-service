@@ -28,11 +28,11 @@ export default class LinkedUserTeamController {
   }
 
   public async remove(request: Request, response: Response): Promise<Response> {
-    const { user_id } = request.params;
+    const { id } = request.params;
 
     const unlinkedUserTeam = container.resolve(UnlinkedUserTeamService);
 
-    const user = await unlinkedUserTeam.execute({ user_id });
+    const user = await unlinkedUserTeam.execute({ id });
 
     return response.json({
       id: user.id,
