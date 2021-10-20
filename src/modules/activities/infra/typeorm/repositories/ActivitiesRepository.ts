@@ -40,9 +40,9 @@ class ActivitiesRepository implements IActivitiesRepository {
   }
 
   public async findAll(): Promise<Activity[]> {
-    const activitys = await this.ormRepository.find();
+    const activities = await this.ormRepository.find();
 
-    return activitys;
+    return activities;
   }
 
   public async findById(id: string): Promise<Activity | undefined> {
@@ -60,11 +60,11 @@ class ActivitiesRepository implements IActivitiesRepository {
   }
 
   public async findAllByGymkhana(gymkhana_id: string): Promise<Activity[]> {
-    const activitys = await this.ormRepository.find({
+    const activities = await this.ormRepository.find({
       where: { gymkhana_id },
     });
 
-    return activitys;
+    return activities;
   }
 }
 
