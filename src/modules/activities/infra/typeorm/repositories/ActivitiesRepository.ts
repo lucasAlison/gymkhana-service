@@ -58,6 +58,14 @@ class ActivitiesRepository implements IActivitiesRepository {
   public async remove(activity: Activity): Promise<Activity> {
     return this.ormRepository.remove(activity);
   }
+
+  public async findAllByGymkhana(gymkhana_id: string): Promise<Activity[]> {
+    const activitys = await this.ormRepository.find({
+      where: { gymkhana_id },
+    });
+
+    return activitys;
+  }
 }
 
 export default ActivitiesRepository;

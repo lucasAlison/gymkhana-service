@@ -7,4 +7,5 @@ export default interface IActivitiesRepository {
   findById(id: string): Promise<Activity | undefined>;
   save(activity: Activity): Promise<Activity>;
   remove(activity: Activity): Promise<Activity>;
+  findAllByGymkhana(gymkhana_id: string): Promise<Activity[]>;
 }
