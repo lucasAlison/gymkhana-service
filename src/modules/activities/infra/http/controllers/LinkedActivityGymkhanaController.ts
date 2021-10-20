@@ -24,7 +24,7 @@ export default class LinkedActivityGymkhanaController {
 
     const activity = await unlinkedActivityGymkhanaService.execute({ id });
 
-    return response.json();
+    return response.json(activity);
   }
 
 }

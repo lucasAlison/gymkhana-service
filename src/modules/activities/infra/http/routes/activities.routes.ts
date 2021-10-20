@@ -3,7 +3,7 @@ import { Router } from 'express';
 import ensureAuthenticated from '@modules/users/infra/http/middlewares/ensureAuthenticated';
 import ActivitiesController from '../controllers/ActivitiesController';
 import ActivityGymkhanaController from '../controllers/ActivityGymkhanaController';
-import LinkedActivityGymkhanaController from '../controllers/LinkedActivityGymkhanaService';
+import LinkedActivityGymkhanaController from '../controllers/LinkedActivityGymkhanaController';
 
 const activitiesRouter = Router();
 const activitiesController = new ActivitiesController;

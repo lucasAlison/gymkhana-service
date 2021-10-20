@@ -7,4 +7,5 @@ export default interface IActivityResponsesRepository {
   findById(id: string): Promise<ActivityResponse | undefined>;
   save(activityResponse: ActivityResponse): Promise<ActivityResponse>;
   remove(activityResponse: ActivityResponse): Promise<ActivityResponse>;
+  findAllByActivity(activity_id: string): Promise<ActivityResponse[]>;
 }
