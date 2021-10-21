@@ -21,18 +21,22 @@ export class CreateTeamActivities1634746289804 implements MigrationInterface {
           {
             name: 'points',
             type: 'int',
+            isNullable: true
           },
           {
             name: 'latitude',
             type: 'decimal',
+            isNullable: true
           },
           {
             name: 'longitude',
             type: 'decimal',
+            isNullable: true
           },
           {
             name: 'time',
             type: 'int',
+            isNullable: true
           },
           {
             name: 'created_at',

@@ -13,17 +13,13 @@ class TeamActivitiesRepository implements ITeamActivitiesRepository {
 
   public async create({
     status,
-    points,
-    latitude,
-    longitude,
-    time
+    team_id,
+    activity_id
   }: ICreateTeamActivityDTO): Promise<TeamActivities> {
     const teamActivity = this.ormRepository.create({
       status,
-      points,
-      latitude,
-      longitude,
-      time
+      team_id,
+      activity_id
      });
 
     await this.ormRepository.save(teamActivity);

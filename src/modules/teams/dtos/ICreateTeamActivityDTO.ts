@@ -1,7 +1,5 @@
 export default interface ICreateTeamActivityDTO {
   status: string;
-  points: number;
-  latitude: number;
-  longitude: number;
-  time: number;
+  team_id: string;
+  activity_id: string;
 }

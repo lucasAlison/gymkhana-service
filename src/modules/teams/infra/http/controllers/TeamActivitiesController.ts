@@ -11,19 +11,15 @@ export default class TeamActivitiesController {
   public async create(request: Request, response: Response): Promise<Response> {
     const {
       status,
-      points,
-      latitude,
-      longitude,
-      time
+      team_id,
+      activity_id
     } = request.body;
     const createTeamAcitivty = container.resolve(CreateTeamActivityService);
 
     const teamAcitivty = await createTeamAcitivty.execute({
       status,
-      points,
-      latitude,
-      longitude,
-      time
+      team_id,
+      activity_id
      });
 
     return response.json(teamAcitivty);
@@ -44,7 +40,9 @@ export default class TeamActivitiesController {
       points,
       latitude,
       longitude,
-      time
+      time,
+      team_id,
+      activity_id
      } = request.body;
 
     const updateTeamActivity = container.resolve(UpdateTeamActivityService);
@@ -55,7 +53,9 @@ export default class TeamActivitiesController {
       points,
       latitude,
       longitude,
-      time
+      time,
+      team_id,
+      activity_id
     });
 
     return response.json(teamActivity);
