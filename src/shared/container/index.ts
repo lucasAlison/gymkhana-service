@@ -12,6 +12,8 @@ import IActivitiesRepository from '@modules/activities/repositories/IActivitiesR
 import ActivitiesRepository from '@modules/activities/infra/typeorm/repositories/ActivitiesRepository';
 import IActivityResponsesRepository from '@modules/activities/repositories/IActivityResponsesRepository';
 import ActivityResponsesRepository from '@modules/activities/infra/typeorm/repositories/ActivityResponsesRepository';
+import ITeamActivitiesRepository from '@modules/teams/repositories/ITeamActivitiesRepository';
+import TeamActivitiesRepository from '@modules/teams/infra/typeorm/repositories/TeamActivitiesRepository';
 
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',
@@ -38,4 +40,8 @@ container.registerSingleton<IActivityResponsesRepository>(
   ActivityResponsesRepository,
 );
 
+container.registerSingleton<ITeamActivitiesRepository>(
+  'TeamActivitiesRepository',
+  TeamActivitiesRepository,
+);
 

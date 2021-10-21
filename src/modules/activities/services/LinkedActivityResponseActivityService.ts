@@ -10,7 +10,7 @@ interface IRequest {
 }
 
 @injectable()
-class LinkedActivityResponseActivity {
+class LinkedActivityResponseActivityService {
   constructor(
     @inject('ActivityResponsesRepository')
     private activityResponsesRepository: IActivityResponsesRepository,
@@ -39,4 +39,4 @@ class LinkedActivityResponseActivity {
   }
 }
 
-export default LinkedActivityResponseActivity;
+export default LinkedActivityResponseActivityService;
