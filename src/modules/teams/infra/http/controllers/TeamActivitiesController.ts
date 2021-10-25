@@ -12,14 +12,16 @@ export default class TeamActivitiesController {
     const {
       status,
       team_id,
-      activity_id
+      activity_id,
+      participant_id
     } = request.body;
     const createTeamAcitivty = container.resolve(CreateTeamActivityService);
 
     const teamAcitivty = await createTeamAcitivty.execute({
       status,
       team_id,
-      activity_id
+      activity_id,
+      participant_id
      });
 
     return response.json(teamAcitivty);
@@ -37,10 +39,6 @@ export default class TeamActivitiesController {
     const { team_activity_id}  = request.params;
     const {
       status,
-      points,
-      latitude,
-      longitude,
-      time,
       team_id,
       activity_id
      } = request.body;
@@ -50,10 +48,6 @@ export default class TeamActivitiesController {
     const teamActivity = await updateTeamActivity.execute({
       team_activity_id,
       status,
-      points,
-      latitude,
-      longitude,
-      time,
       team_id,
       activity_id
     });

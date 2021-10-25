@@ -10,7 +10,6 @@ const activitiesController = new ActivitiesController;
 const activityGymkhanaController = new ActivityGymkhanaController();
 const linkedActivityGymkhanaController = new LinkedActivityGymkhanaController();
 
-activitiesRouter.use(ensureAuthenticated);
 
 activitiesRouter.post('/', activitiesController.create);
 activitiesRouter.get('/', activitiesController.index);
@@ -21,4 +20,5 @@ activitiesRouter.get('/gymkhana/:gymkhana_id', activityGymkhanaController.index)
 activitiesRouter.post('/:id/gymkhana', linkedActivityGymkhanaController.create);
 activitiesRouter.delete('/:id/gymkhana', linkedActivityGymkhanaController.remove);
 
+activitiesRouter.use(ensureAuthenticated);
 export default activitiesRouter;

@@ -14,12 +14,14 @@ class TeamActivitiesRepository implements ITeamActivitiesRepository {
   public async create({
     status,
     team_id,
-    activity_id
+    activity_id,
+    participant_id
   }: ICreateTeamActivityDTO): Promise<TeamActivities> {
     const teamActivity = this.ormRepository.create({
       status,
       team_id,
-      activity_id
+      activity_id,
+      participant_id
      });
 
     await this.ormRepository.save(teamActivity);
@@ -45,6 +47,14 @@ class TeamActivitiesRepository implements ITeamActivitiesRepository {
 
   public async remove(teamActivity: TeamActivities): Promise<TeamActivities> {
     return this.ormRepository.remove(teamActivity);
+  }
+
+  public async findAllByTeam(team_id: string): Promise<TeamActivities[]> {
+    const teamActivities = await this.ormRepository.find({
+      where: { team_id },
+    });
+
+    return teamActivities;
   }
 
 }

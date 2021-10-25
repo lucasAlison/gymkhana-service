@@ -10,7 +10,6 @@ const activityResponsesController = new ActivityResponsesController;
 const activityResponseActivityController = new ActivityResponseActivityController();
 const linkedActivityResponseActivityController = new LinkedActivityResponseActivityController();
 
-activityResponsesRouter.use(ensureAuthenticated);
 
 activityResponsesRouter.post('/', activityResponsesController.create);
 activityResponsesRouter.get('/', activityResponsesController.index);
@@ -21,4 +20,5 @@ activityResponsesRouter.get('/activity/:activity_id', activityResponseActivityCo
 activityResponsesRouter.post('/:id/activity', linkedActivityResponseActivityController.create);
 activityResponsesRouter.delete('/:id/activity', linkedActivityResponseActivityController.remove);
 
+activityResponsesRouter.use(ensureAuthenticated);
 export default activityResponsesRouter;

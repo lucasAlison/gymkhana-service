@@ -10,14 +10,14 @@ const gymkhanasController = new GymkhanasController;
 const gymkhanaCodeController = new GymkhanaCodeController;
 const gymkhanaStatusController = new GymkhanaStatusController;
 
-gymkhanasRouter.use(ensureAuthenticated);
+gymkhanasRouter.get('/code/:code', gymkhanaCodeController.show);
 
 gymkhanasRouter.post('/', gymkhanasController.create);
 gymkhanasRouter.get('/', gymkhanasController.index);
 gymkhanasRouter.get('/status/:status', gymkhanaStatusController.index);
 gymkhanasRouter.get('/:gymkhana_id', gymkhanasController.show);
-gymkhanasRouter.get('/code/:code', gymkhanaCodeController.show);
 gymkhanasRouter.put('/:gymkhana_id', gymkhanasController.update);
 gymkhanasRouter.delete('/:gymkhana_id', gymkhanasController.remove);
 
+gymkhanasRouter.use(ensureAuthenticated);
 export default gymkhanasRouter;

@@ -7,4 +7,5 @@ export default interface ITeamActivitiesRepository {
   findById(id: string): Promise<TeamActivities | undefined>;
   save(teamActivities: TeamActivities): Promise<TeamActivities>;
   remove(teamActivities: TeamActivities): Promise<TeamActivities>;
+  findAllByTeam(team_id: string): Promise<TeamActivities[]>;
 }
