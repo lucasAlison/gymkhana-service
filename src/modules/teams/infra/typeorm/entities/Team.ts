@@ -1,4 +1,3 @@
-import Gymkhana from '@modules/gymkhanas/infra/typeorm/entities/Gymkhana';
 import {
   Entity,
   Column,
@@ -9,6 +8,7 @@ import {
   JoinColumn,
 } from 'typeorm';
 
+import Gymkhana from '@modules/gymkhanas/infra/typeorm/entities/Gymkhana';
 @Entity('teams')
 class Team {
   @PrimaryGeneratedColumn('uuid')

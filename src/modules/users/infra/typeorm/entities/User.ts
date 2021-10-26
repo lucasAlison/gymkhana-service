@@ -1,4 +1,3 @@
-import Team from '@modules/teams/infra/typeorm/entities/Team';
 import {
   Entity,
   Column,
@@ -9,6 +8,7 @@ import {
   JoinColumn,
 } from 'typeorm';
 
+import Team from '@modules/teams/infra/typeorm/entities/Team';
 @Entity('users')
 class User {
   @PrimaryGeneratedColumn('uuid')
