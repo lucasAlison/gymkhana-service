@@ -6,6 +6,7 @@ import gymkhanasRouter from '@modules/gymkhanas/infra/http/routes/gymkhanas.rout
 import activitiesRoutes from '@modules/activities/infra/http/routes/activities.routes';
 import activityResponsesRoutes from '@modules/activities/infra/http/routes/activityResponses.routes';
 import teamActivitiesRouter from '@modules/teams/infra/http/routes/teamActivities.routes';
+import unityRouter from '@modules/unity/infra/http/routes/unity.routes';
 
 const routes = Router();
 
@@ -16,5 +17,6 @@ routes.use('/gymkhanas', gymkhanasRouter);
 routes.use('/activity/responses', activityResponsesRoutes);
 routes.use('/activities', activitiesRoutes);
 routes.use('/team/activities', teamActivitiesRouter);
+routes.use('/unity', unityRouter);
 
 export default routes;
