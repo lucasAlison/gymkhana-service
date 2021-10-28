@@ -10,13 +10,13 @@ class TrackingService {
       {
         id: 0,
         type: "image",
-        url: "http://192.168.3.8:5000/files/tracking/chest.wtc",
+        url: "http://167.99.237.34/files/chest.wtc",
         assetName: "Chest"
       },
       {
         id: 1,
         type: "object",
-        url: "http://192.168.3.8:5000/files/tracking/room.wto",
+        url: "http://167.99.237.34/files/room.wto",
         assetName: "Chest"
       }
     ];
