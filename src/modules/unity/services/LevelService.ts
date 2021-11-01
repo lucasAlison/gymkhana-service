@@ -10,7 +10,7 @@ class LevelService {
       {
         id: 0,
         levelName: "Level 1",
-        sceneSequence: ["Tip","Tracking","Question","ChestReward"],
+        sceneSequence: ["Tip","Tracking","Question"],
         tipId: 0,
         questionId: 0,
         trackingId: 0
