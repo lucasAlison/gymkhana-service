@@ -12,12 +12,6 @@ class TrackingService {
         type: "image",
         url: "http://167.99.237.34/files/chest.wtc",
         assetName: "Chest"
-      },
-      {
-        id: 1,
-        type: "object",
-        url: "http://167.99.237.34/files/room.wto",
-        assetName: "Chest"
       }
     ];
     return trackings;

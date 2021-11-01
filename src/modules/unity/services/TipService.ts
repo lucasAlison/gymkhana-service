@@ -12,12 +12,6 @@ class TipService {
         title: "Grave a dica",
         subtitle: "Procure por imagens de um baú",
         body: "Sou uma estrutura de repetição. Quem sou eu?"
-      },
-      {
-        id: 1,
-        title: "Grave a dica",
-        subtitle: "Procure por um cômodo",
-        body: "Sou uma estrutura de repetição. Quem sou eu?"
       }
     ];
     return tips;

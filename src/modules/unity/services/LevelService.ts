@@ -14,14 +14,6 @@ class LevelService {
         tipId: 0,
         questionId: 0,
         trackingId: 0
-      },
-      {
-        id: 1,
-        levelName: "Level 2",
-        sceneSequence: ["Tip","Tracking","Question","ChestReward"],
-        tipId: 1,
-        questionId: 0,
-        trackingId: 1
       }
     ];
     return levels;
