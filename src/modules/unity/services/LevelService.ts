@@ -5,8 +5,8 @@ class LevelService {
   constructor(
   ) {}
 
-  public async execute(): Promise<Object[]> {
-    const levels = [
+  public async execute(): Promise<Object> {
+    const levels =
       {
         id: 0,
         levelName: "Level 1",
@@ -14,8 +14,7 @@ class LevelService {
         tipId: 0,
         questionId: 0,
         trackingId: 0
-      }
-    ];
+      };
     return levels;
   }
 }
