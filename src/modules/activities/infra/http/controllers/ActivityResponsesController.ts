@@ -11,13 +11,15 @@ export default class ActivityResponsesController {
   public async create(request: Request, response: Response): Promise<Response> {
     const {
       note,
-      correct
+      correct,
+      correction
     } = request.body;
     const createActivityResponse = container.resolve(CreateActivityResponseService);
 
     const activityResponse = await createActivityResponse.execute({
       note,
-      correct
+      correct,
+      correction
     });
 
     return response.json(activityResponse);
@@ -35,7 +37,8 @@ export default class ActivityResponsesController {
     const { activity_response_id }  = request.params;
     const {
       note,
-      correct
+      correct,
+      correction
     } = request.body;
 
     const updateActivityResponse = container.resolve(UpdateActivityResponseService);
@@ -43,7 +46,8 @@ export default class ActivityResponsesController {
     const activityResponse = await updateActivityResponse.execute({
       activity_response_id,
       note,
-      correct
+      correct,
+      correction
     });
 
     return response.json(activityResponse);

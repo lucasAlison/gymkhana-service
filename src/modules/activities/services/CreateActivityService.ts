@@ -13,6 +13,9 @@ interface IRequest {
   radius: number;
   points: number;
   time: number;
+  typeTracking: string;
+  urlTracking: string;
+  assetNameTracking: string;
 }
 
 @injectable()
@@ -31,7 +34,10 @@ class CreateActivityService {
     longitude,
     radius,
     points,
-    time
+    time,
+    typeTracking,
+    urlTracking,
+    assetNameTracking
   }: IRequest): Promise<Activity> {
 
     const activity = await this.activitiesRepository.create({
@@ -43,7 +49,10 @@ class CreateActivityService {
       longitude,
       radius,
       points,
-      time
+      time,
+      typeTracking,
+      urlTracking,
+      assetNameTracking
     });
 
     return activity;

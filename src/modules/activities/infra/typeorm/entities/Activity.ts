@@ -9,6 +9,7 @@ import {
 } from 'typeorm';
 
 import Gymkhana from '@modules/gymkhanas/infra/typeorm/entities/Gymkhana';
+import ActivityResponse from './ActivityResponse';
 @Entity('activities')
 class Activity {
   @PrimaryGeneratedColumn('uuid')
@@ -47,6 +48,17 @@ class Activity {
   @ManyToOne(() => Gymkhana)
   @JoinColumn({ name: 'gymkhana_id' })
   gymkhana: Gymkhana;
+
+  @Column()
+  type_tracking: string;
+
+  @Column()
+  url_tracking: string;
+
+  @Column()
+  asset_name_tracking: string;
+
+  options: ActivityResponse[];
 
   @CreateDateColumn()
   created_at: Date;

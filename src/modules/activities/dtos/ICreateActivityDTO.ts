@@ -8,4 +8,7 @@ export default interface ICreateActivityDTO {
   radius: number;
   points: number;
   time: number;
+  typeTracking: string;
+  urlTracking: string;
+  assetNameTracking: string;
 }

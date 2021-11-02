@@ -7,6 +7,7 @@ import activitiesRoutes from '@modules/activities/infra/http/routes/activities.r
 import activityResponsesRoutes from '@modules/activities/infra/http/routes/activityResponses.routes';
 import teamActivitiesRouter from '@modules/teams/infra/http/routes/teamActivities.routes';
 import unityRouter from '@modules/unity/infra/http/routes/unity.routes';
+import tipsRouter from '@modules/activities/infra/http/routes/tips.routes';
 
 const routes = Router();
 
@@ -18,5 +19,6 @@ routes.use('/activity/responses', activityResponsesRoutes);
 routes.use('/activities', activitiesRoutes);
 routes.use('/team/activities', teamActivitiesRouter);
 routes.use('/unity', unityRouter);
+routes.use('/tips', tipsRouter);
 
 export default routes;

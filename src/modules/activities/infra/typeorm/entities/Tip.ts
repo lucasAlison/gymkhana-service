@@ -9,19 +9,19 @@ import {
 } from 'typeorm';
 import Activity from './Activity';
 
-@Entity('activity_responses')
-class ActivityResponse {
+@Entity('tips')
+class Tip {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
-  note: string;
+  title: string;
 
   @Column()
-  correct: boolean;
+  subtitle: string;
 
   @Column()
-  correction: string;
+  body: string;
 
   @Column()
   activity_id: string | null;
@@ -37,4 +37,4 @@ class ActivityResponse {
   updated_at: Date;
 }
 
-export default ActivityResponse;
+export default Tip;

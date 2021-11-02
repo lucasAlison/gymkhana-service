@@ -20,7 +20,10 @@ class ActivitiesRepository implements IActivitiesRepository {
     longitude,
     radius,
     points,
-    time
+    time,
+    typeTracking,
+    urlTracking,
+    assetNameTracking
   }: ICreateActivityDTO): Promise<Activity> {
     const activity = this.ormRepository.create({
       name,
@@ -31,7 +34,10 @@ class ActivitiesRepository implements IActivitiesRepository {
       longitude,
       radius,
       points,
-      time
+      time,
+      type_tracking: typeTracking,
+      url_tracking: urlTracking,
+      asset_name_tracking: assetNameTracking
      });
 
     await this.ormRepository.save(activity);

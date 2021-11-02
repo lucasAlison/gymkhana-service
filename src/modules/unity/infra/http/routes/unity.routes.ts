@@ -13,10 +13,10 @@ const questionController = new QuestionController();
 const tipController = new TipController();
 const trackingController = new TrackingController();
 
-unityRouter.get('/levels', levelController.index);
-unityRouter.get('/questions', questionController.index);
-unityRouter.get('/tips', tipController.index);
-unityRouter.get('/tracking', trackingController.index);
+unityRouter.get('/level/:team_activity_id', levelController.index);
+unityRouter.get('/question/:activity_id', questionController.show);
+unityRouter.get('/tip/:tip_id', tipController.show);
+unityRouter.get('/tracking/:activity_id', trackingController.show);
 
 unityRouter.use(ensureAuthenticated);
 export default unityRouter;

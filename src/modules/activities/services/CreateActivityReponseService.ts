@@ -6,6 +6,7 @@ import ActivityResponse from '../infra/typeorm/entities/ActivityResponse';
 interface IRequest {
   note: string;
   correct: boolean;
+  correction: string;
 }
 
 @injectable()
@@ -17,12 +18,14 @@ class CreateActivityResponseService {
 
   public async execute({
     note,
-    correct
+    correct,
+    correction
   }: IRequest): Promise<ActivityResponse> {
 
     const activityResponse = await this.activityResponsesRepository.create({
       note,
-      correct
+      correct,
+      correction
     });
 
     return activityResponse;

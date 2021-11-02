@@ -8,6 +8,7 @@ interface IRequest {
   activity_response_id: string;
   note: string;
   correct: boolean;
+  correction: string;
 }
 
 @injectable()
@@ -20,7 +21,8 @@ class UpdateActivityResponseService {
   public async execute({
     activity_response_id,
     note,
-    correct
+    correct,
+    correction
   }: IRequest): Promise<ActivityResponse> {
     const activityResponse = await this.activityResponseRepository.findById(activity_response_id);
 
@@ -30,6 +32,7 @@ class UpdateActivityResponseService {
 
     activityResponse.note = note;
     activityResponse.correct = correct;
+    activityResponse.correction = correction;
 
     return this.activityResponseRepository.save(activityResponse);
   }

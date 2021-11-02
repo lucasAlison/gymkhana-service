@@ -13,11 +13,13 @@ class ActivityResponsesRepository implements IActivityResponsesRepository {
 
   public async create({
     note,
-    correct
+    correct,
+    correction
   }: ICreateActivityResponseDTO): Promise<ActivityResponse> {
     const activityResponse = this.ormRepository.create({
       note,
-      correct
+      correct,
+      correction
      });
 
     await this.ormRepository.save(activityResponse);

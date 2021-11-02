@@ -18,7 +18,10 @@ export default class ActivitiesController {
       longitude,
       radius,
       points,
-      time
+      time,
+      typeTracking,
+      urlTracking,
+      assetNameTracking
     } = request.body;
     const createActivity = container.resolve(CreateActivityService);
 
@@ -31,7 +34,10 @@ export default class ActivitiesController {
       longitude,
       radius,
       points,
-      time
+      time,
+      typeTracking,
+      urlTracking,
+      assetNameTracking
     });
 
     return response.json(activity);
@@ -56,7 +62,10 @@ export default class ActivitiesController {
       longitude,
       radius,
       points,
-      time
+      time,
+      typeTracking,
+      urlTracking,
+      assetNameTracking
     } = request.body;
 
     const updateActivity = container.resolve(UpdateActivityService);
@@ -71,7 +80,10 @@ export default class ActivitiesController {
       longitude,
       radius,
       points,
-      time
+      time,
+      typeTracking,
+      urlTracking,
+      assetNameTracking
     });
 
     return response.json(activity);
